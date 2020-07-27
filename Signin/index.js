@@ -1,7 +1,7 @@
 var attempt = 3; //variable to count number of attempts.
 // below function executes on click of login button.
 function validated(){
-    var usent.getrname =document.getElementById("username").Value;
+    var username=document.getElementById("username").Value;
     var password =documeElementById(password).Value;
     var Email =document.getElementById("password").Value;
     if(username=="Generous" && password=="123456789"){
