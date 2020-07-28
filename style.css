@@ -1,0 +1,27 @@
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  label {
+    margin: 5px;
+  }
+  
+  input {
+    margin-top: 5px;
+    height: 20px;
+  }
+  
+  .error {
+    background-color: red;
+    color: white;
+    visibility: hidden;
+    height: 40px;
+    width: 130px;
+    margin-left: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
