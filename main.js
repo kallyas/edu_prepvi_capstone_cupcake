@@ -43,6 +43,7 @@ button.addEventListener("click", (e) => {
   // e.preventDefault();
   login();
   alert("Login successful!")
+  window.location = "index.html"
 });
 
 
