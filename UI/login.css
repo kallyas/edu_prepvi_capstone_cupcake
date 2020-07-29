@@ -1,22 +1,30 @@
-body{
+body {
     height:100vh;
     background-size: cover;
     background-position:left;
     margin: 0 auto;
 }
  
-.container{
+.container {
   flex-wrap: wrap;
 }
- h2{
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
      background-color: ivory;
      padding: 30px;
      margin-top: 125px;
      margin: 0 auto;
      text-align: center;
      border-radius: 6px;
- }
- button{
+}
+
+button {
      width: 150px;
      padding: 10px;
      margin: 0 auto;
@@ -24,8 +32,9 @@ body{
      position: center;
      border-radius: 5px;
      margin-left: 100px;
- }
- .form {
+}
+
+.form {
      background-color: rgba(128, 128, 128, 0.411);
      position: relative;
      z-index: 1;
@@ -34,15 +43,19 @@ body{
      padding: 45px;
      margin-top: 125px;
      height: 350px;
- }
- p{
+     justify-content: center;
+}
+
+p {
      font-weight: bold;
      color: #ffff;
- }
- a{
+}
+
+a {
      color: darkorange;
- }
- input{
+}
+
+input {
      font-family: "Roboto",sans-serif ;
      outline: lemonchiffon;
      width: 300px;
@@ -50,12 +63,12 @@ body{
      margin: 10px;
      text-align: center;
      border-radius: 5px;
+}
 
-
- }
- .form.register-form{
+.form.register-form {
      display:none;
- }
- .message{
+}
+
+.message {
      margin-left: 60px;
- }
+}

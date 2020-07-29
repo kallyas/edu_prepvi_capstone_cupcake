@@ -12,22 +12,39 @@
 <body background="../images/image.jpg"> 
     <div class="container">
         <div class="form">
-            <h2>EDU-VIDEO LIBRARY</h2><br>
-            <form id="form_id" method="post" name="myform">
+            <div class="logo">
+                <svg height="64" width="300">
+                    <a xlink:href="https://www.w3schools.com/graphics/">
+                        <style>
+                            .main { 
+                                font: bold 40px verdana; 
+                            }
+                            .sub {
+                                font: 18px candara;
+                            }
+    
+                        </style>
+                        <text x="88" y="37" fill="rgb(255, 187, 0)" class="main">Edu</text>
+                        <text x="75" y="56" fill="rgb(0, 183, 255)" class="sub">Movie Library</text> 
+                    </a>
+                    Sorry, your browser does not support inline SVG!
+                </svg>
+            </div>
+            <form id="form_id" name="myform">
                 <input type="text" id="username" placeholder="Username"/><br>
 
                 <input type="password" id="password" placeholder="password"/><br> 
 
                 <button value="SIGNIN" id="login">Login</button>
 
-                <p class= "message"> Not Registered? <a href="#">SIGN UP</a>
+                <p class= "message"> Not Registered? <a href="signup.html">SIGN UP</a>
                 </p>
                 <div class="error">invalid input</div>
             </form>
         </div>
     </div> 
 
-    <script src="./JS/main.js"></script>
+    <script src="../JS/login.js"></script>
 </body>
 
 </html>
