@@ -1,3 +1,19 @@
+window.onload = function () {
+  // set an object for movies
+  const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
+  const urlLatest = 'https://api.themoviedb.org/3/movie/latest?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
+
+  getMovies(urlPopular, 'newMovies')
+
+  getMovies(urlLatest, 'latestMovies')
+
+  displayMovies('please')
+
+  displayMovies('please2')
+
+  displayMovies('please3')
+}
+
 // SET USERNAME OF LOGGED IN USER
 const user = JSON.parse(localStorage.getItem('username'))
 
@@ -148,24 +164,25 @@ const image = document.getElementsByClassName('movie-card__image')
 const title = document.getElementsByClassName('movie-card__title')
 const date = document.getElementsByClassName('movie-card__date')
 
-// set an object for movies
-const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
-const urlLatest = 'https://api.themoviedb.org/3/movie/latest?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US';
+
 
 // fetch movie data and set it to the local storage
-fetch(urlPopular)
+function getMovies (url, objName) {
+  fetch(url)
   .then(response => response.json())
-  .then(data => localStorage.setItem('movies', JSON.stringify(data.results)))
+  .then(data => localStorage.setItem(objName, JSON.stringify(data.results)))
+}
+
 
 const movies = JSON.parse(localStorage.getItem('movies'))
 
 console.log(movies)
 
 // Display the movies
-function displayMovies() {
+function displayMovies(wrapper) {
   movies.map(movie => {
     // grab container
-    const container = document.getElementById('please')
+    const container = document.getElementById(wrapper)
 
     // create movie card
     const movieCard = document.createElement('div')
@@ -219,7 +236,7 @@ function displayMovies() {
 }
 
 // Display the movies
-displayMovies()
+// displayMovies()
 
 
 

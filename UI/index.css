@@ -470,7 +470,7 @@ body {
   background-color: inherit;
   align-self: center;
   justify-self: center;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .movie-section__category-title {
@@ -479,12 +479,12 @@ body {
 
 .movie-section__category {
   width: 100%;
-  height: 50vh;
+  /* height: 50vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  overflow-y: scroll;
+  overflow: hidden;
   
   /* margin: auto;
   white-space: nowrap;
@@ -494,11 +494,14 @@ body {
 
 .movie-section__category-content {
   width: 100%;
-  /* height: 300px; */
+  height: 340px;
   display: flex;
   align-content: space-between;
   justify-content: space-between;
   /* justify-content: center; */
+
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 /* .movie-section__movie-card {
@@ -561,5 +564,22 @@ body {
 .movie-card__rating {
   padding: 2px 0;
   margin: 2px 0;
+}
+
+
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  height: 30vh;
+
+  background: url(../images/spiderman.jpg) no-repeat center fixed; 
+  background-size: center;
+}
+
+.footer-layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 183, 255, 0.2);
 }
 

@@ -10,6 +10,7 @@ const users = [
   }
 ];
 
+localStorage.setItem('users', JSON.stringify(users))
 
 let error = document.querySelector(".error");
 let form = document.querySelector("form");
