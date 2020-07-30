@@ -12,6 +12,8 @@ window.onload = function () {
   displayMovies('please2')
 
   displayMovies('please3')
+
+  ready()
 }
 
 // SET USERNAME OF LOGGED IN USER
