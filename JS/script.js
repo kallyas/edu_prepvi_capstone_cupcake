@@ -275,6 +275,20 @@ function displayMovies(wrapper, movieObjName) {
   })
 }
 
+// LOG OUT
+
+function logout() {
+  alert('Logging Out')
+
+  window.location = '../index.html'
+}
+
+// grab the logout anchor
+const logoutLink = document.getElementById('logout')
+logoutLink.addEventListener('click', (event) => {
+  logout()
+})
+
 // Display the movies
 // displayMovies()
 
