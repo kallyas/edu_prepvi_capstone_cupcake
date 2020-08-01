@@ -33,7 +33,7 @@ function login() {
       alert("Login successfull")
       localStorage.setItem('userLoggedIn', JSON.stringify(username))
       // console.log(window.location)
-      window.location = 'index.html'
+      window.location = './UI/index.html'
       return false
     } else {
       error.style.visibility = "visible";

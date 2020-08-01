@@ -1,23 +1,23 @@
 window.onload = function () {
-  // set an object for movies
-  const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
-  const urlLatest = 'https://api.themoviedb.org/3/movie/latest?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
 
-  getMovies(urlPopular, 'newMovies')
 
-  getMovies(urlLatest, 'latestMovies')
+  // getMovies(urlPopular, 'newMovies')
 
-  displayMovies('please')
+  // getMovies(urlLatest, 'latestMovies')
 
-  displayMovies('please2')
+  getMovies()
 
-  displayMovies('please3')
+  displayMovies('please', 'popularMovies')
+
+  displayMovies('please2', 'tvShows')
+
+  displayMovies('please3', 'latestMovies')
 
   ready()
 }
 
 // SET USERNAME OF LOGGED IN USER
-const user = JSON.parse(localStorage.getItem('username'))
+const user = JSON.parse(localStorage.getItem('isLoggedIn'))
 
 const loggedIn = document.getElementsByClassName('user-settings__link user-settings__name')
 loggedIn.textContent = user
@@ -156,10 +156,6 @@ function updateCartTotal() {
 
 
 
-
-
-
-
 // FETCHING MOVIE DATA FILL THE BOXES
 const card = document.getElementsByClassName("movie-card__image-wrapper")
 const image = document.getElementsByClassName('movie-card__image')
@@ -169,20 +165,62 @@ const date = document.getElementsByClassName('movie-card__date')
 
 
 // fetch movie data and set it to the local storage
-function getMovies (url, objName) {
-  fetch(url)
-  .then(response => response.json())
-  .then(data => localStorage.setItem(objName, JSON.stringify(data.results)))
+function getMovies () {
+
+  // set an object for movie URLs
+  const urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
+  const urlLatest = 'https://api.themoviedb.org/3/movie/top_rated?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
+  const urlTvShows = 'https://api.themoviedb.org/3/movie/upcoming?api_key=ebb6fea526ae6fedd22bbfce0ae8199a&language=en-US&page=1';
+
+  Promise.all([
+    fetch(urlPopular),
+    fetch(urlLatest),
+    fetch(urlTvShows)
+  ]).then(responses => {
+    // Get a JSON object from each of the responses
+    return Promise.all(responses.map(response => response.json()))
+  }).then(data => {
+    // save the data to local storage
+
+    let counter = 0
+
+    data.forEach(item => {
+      // console.log(item.results)
+
+      const moviesList = item.results.map(movie => {
+        return {
+          id: movie.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+          release_date: movie.release_date,
+          rating: movie.vote_average
+        }
+      })
+
+      const movieObjNames = [
+        'popularMovies',
+        'latestMovies',
+        'tvShows'
+      ]
+
+      const movieObjName = movieObjNames[counter]
+
+      localStorage.setItem(movieObjName, JSON.stringify(moviesList))
+
+      counter ++
+
+      // console.log(JSON.parse(localStorage.getItem(movieObjName)))
+    })
+  })
 }
 
 
-const movies = JSON.parse(localStorage.getItem('movies'))
-
-console.log(movies)
-
 // Display the movies
-function displayMovies(wrapper) {
-  movies.map(movie => {
+function displayMovies(wrapper, movieObjName) {
+  // get the movie object
+  const movieObj = JSON.parse(localStorage.getItem(movieObjName))
+
+  movieObj.map(movie => {
     // grab container
     const container = document.getElementById(wrapper)
 
@@ -242,20 +280,40 @@ function displayMovies(wrapper) {
 
 
 
+// SEARCH MOVIES
+// function search() {
+//   // Get the search query
+//   const searchQuery = document.getElementById('searchQuery').value
+
+//   // Get all the movie objects
+//   const popularMovies = JSON.parse(localStorage.getItem('popularMovies'))
+//   const latestMovies = JSON.parse(localStorage.getItem('latestMovies'))
+//   const tvShows = JSON.parse(localStorage.getItem('tvShows'))
+
+  
+
+//   // search
+//   searchFunction(searchQuery, popularMovies)
+//   return
+// }
 
 
+// function searchFunction(searchQuery, movieObj) {
+//   for (let i = 0; i < movieObj.length; i++) {
+//     if (movieObj[i].name == searchQuery) {
+//       console.log(movieObj[i])
+//       return movieObj[i]
+//     }
+//   }
+// }
+
+// const searchButton = document.getElementById('searchButton')
+// searchButton.addEventListener('click', (event) => {
+//   event.preventDefault()
+
+//   console.log(event)
+
+//   search()
 
 
-
-
-
-
-
-
-
-
-
-
-
-// MVC
-// const app = new Controller(new Model(), new View())
+// })
