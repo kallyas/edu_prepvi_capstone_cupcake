@@ -36,7 +36,7 @@ function signUp() {
 
   alert('Sign up successful!')
   console.log(window.location)
-  window.location = "index.html"
+  window.location = "./index.html"
 }
   
 let btnSignUp = document.querySelector("#signup");
