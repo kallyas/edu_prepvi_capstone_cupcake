@@ -1,31 +1,91 @@
-@import
-url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open + Sans);
 
 /* STYLE SHEET RESET */
-html, body, div, span, applet, object, iframe, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
   overflow: scroll;
 }
-
 
 .container {
   display: flex;
@@ -43,7 +103,7 @@ body {
 
   width: 100%;
   height: 450px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -64,10 +124,8 @@ body {
   height: 90px;
   width: 100%;
 
-  background-image: linear-gradient(to top, rgba(0,0,0,0), rgb(0, 0, 0));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
-
-
 
 .nav-wrapper {
   display: flex;
@@ -81,7 +139,6 @@ body {
 }
 
 .search {
-  
 }
 
 .nav-list {
@@ -102,7 +159,8 @@ body {
   text-align: center;
   text-decoration: none;
   padding: 14px 16px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 /* change nav-link color on hover */
@@ -119,7 +177,6 @@ body {
 .dropdown {
   float: left;
   overflow: hidden;
-  
 }
 
 .dropdown .dropbtn {
@@ -130,7 +187,8 @@ body {
   padding: 14px 16px;
   background-color: inherit;
   margin: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   cursor: pointer;
 }
 
@@ -156,7 +214,8 @@ body {
   padding: 12px 16px;
   text-decoration: none;
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .dropdown-content a:hover {
@@ -185,7 +244,7 @@ body {
   position: absolute;
   cursor: pointer;
   top: 1em;
-  right: 5.5em; 
+  right: 5.5em;
 }
 
 .cart-icon {
@@ -270,11 +329,11 @@ body {
   z-index: 50;
 
   transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 .user-settings-toggle {
-  padding: .5em;
+  padding: 0.5em;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -294,7 +353,7 @@ body {
 }
 
 .user-settings-open .hamburger {
-  transform: rotate(.625turn);
+  transform: rotate(0.625turn);
 }
 
 .user-settings-open .hamburger::before {
@@ -322,14 +381,18 @@ body {
 
 .hamburger::before,
 .hamburger::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
 }
 
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px;}
+.hamburger::before {
+  top: 6px;
+}
+.hamburger::after {
+  bottom: 6px;
+}
 
 .user-settings__list {
   list-style: none;
@@ -378,8 +441,6 @@ body {
   height: 80%;
 }
 
-
-
 .search-title-wrapper {
   display: flex;
   flex-direction: column;
@@ -389,13 +450,12 @@ body {
   height: 100%;
 
   text-align: center;
-} 
+}
 
 .search-title {
   font-size: 48px;
   margin: 0;
   padding: 0;
-  
 }
 
 .search-subtitle {
@@ -432,7 +492,7 @@ body {
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #9dbfaf;
 }
 
 .search-query:focus {
@@ -465,7 +525,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  
+
   /* height: ; */
   background-color: inherit;
   align-self: center;
@@ -474,7 +534,6 @@ body {
 }
 
 .movie-section__category-title {
-
 }
 
 .movie-section__category {
@@ -483,13 +542,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   overflow: hidden;
-  
-  /* margin: auto;
-  white-space: nowrap;
-  overflow: scroll;
-  overflow-y: hidden; */
 }
 
 .movie-section__category-content {
@@ -498,35 +551,18 @@ body {
   display: flex;
   align-content: space-between;
   justify-content: space-between;
-  /* justify-content: center; */
-
   overflow-x: scroll;
   overflow-y: hidden;
 }
-
-/* .movie-section__movie-card {
-  width: 150px;
-  height: 225px;
-  padding: 9px 9px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  font-family: Roboto, sans-serif;
-} */
 
 .movie-section__movie-card {
   font-family: Roboto, sans-serif;
   width: 100%;
   height: 100%;
   padding: 7px 7px;
-
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .movie-section__image-wrapper {
@@ -539,7 +575,8 @@ body {
   height: 225px;
 
   border-radius: 10px;
-  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
 }
 
 .movie-card__cart-icon {
@@ -548,7 +585,6 @@ body {
 
 .movie-card__title-container {
   text-align: center;
-  
 }
 
 .movie-card__title {
@@ -566,14 +602,12 @@ body {
   margin: 2px 0;
 }
 
-
-
 /* FOOTER */
 .footer {
   width: 100%;
   height: 30vh;
 
-  background: url(../images/spiderman.jpg) no-repeat center fixed; 
+  background: url(../images/spiderman.jpg) no-repeat center fixed;
   background-size: center;
 }
 
@@ -582,4 +616,3 @@ body {
   height: 100%;
   background-color: rgba(0, 183, 255, 0.2);
 }
-

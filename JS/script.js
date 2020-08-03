@@ -289,45 +289,45 @@ logoutLink.addEventListener('click', (event) => {
   logout()
 })
 
-// Display the movies
-// displayMovies()
+//Display the movies
+displayMovies()
 
 
 
-// SEARCH MOVIES
-// function search() {
-//   // Get the search query
-//   const searchQuery = document.getElementById('searchQuery').value
+//SEARCH MOVIES
+function search() {
+  // Get the search query
+  const searchQuery = document.getElementById('searchQuery').value
 
-//   // Get all the movie objects
-//   const popularMovies = JSON.parse(localStorage.getItem('popularMovies'))
-//   const latestMovies = JSON.parse(localStorage.getItem('latestMovies'))
-//   const tvShows = JSON.parse(localStorage.getItem('tvShows'))
+  // Get all the movie objects
+  const popularMovies = JSON.parse(localStorage.getItem('popularMovies'))
+  const latestMovies = JSON.parse(localStorage.getItem('latestMovies'))
+  const tvShows = JSON.parse(localStorage.getItem('tvShows'))
 
   
 
-//   // search
-//   searchFunction(searchQuery, popularMovies)
-//   return
-// }
+  // search
+  searchFunction(searchQuery, popularMovies)
+  return
+}
 
 
-// function searchFunction(searchQuery, movieObj) {
-//   for (let i = 0; i < movieObj.length; i++) {
-//     if (movieObj[i].name == searchQuery) {
-//       console.log(movieObj[i])
-//       return movieObj[i]
-//     }
-//   }
-// }
+function searchFunction(searchQuery, movieObj) {
+  for (let i = 0; i < movieObj.length; i++) {
+    if (movieObj[i].name == searchQuery) {
+      console.log(movieObj[i])
+      return movieObj[i]
+    }
+  }
+}
 
-// const searchButton = document.getElementById('searchButton')
-// searchButton.addEventListener('click', (event) => {
-//   event.preventDefault()
+const searchButton = document.getElementById('searchButton')
+searchButton.addEventListener('click', (event) => {
+  event.preventDefault()
 
-//   console.log(event)
+  console.log(event)
 
-//   search()
+  search()
 
 
-// })
+})

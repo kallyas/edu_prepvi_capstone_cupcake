@@ -1,74 +1,93 @@
 body {
-    height:100vh;
-    background-size: cover;
-    background-position:left;
-    margin: 0 auto;
+  height: 100vh;
+  background-size: cover;
+  background-position: left;
+  margin: 0 auto;
 }
- 
+
 .container {
   flex-wrap: wrap;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
-     background-color: ivory;
-     padding: 30px;
-     margin-top: 125px;
-     margin: 0 auto;
-     text-align: center;
-     border-radius: 6px;
+  background-color: ivory;
+  padding: 30px;
+  margin-top: 125px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 6px;
 }
 
 button {
-     width: 150px;
-     padding: 10px;
-     margin: 0 auto;
-     background-color: rgb(179, 149, 111);
-     position: center;
-     border-radius: 5px;
-     margin-left: 100px;
+  width: 150px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgb(179, 149, 111);
+  position: center;
+  border-radius: 5px;
+  margin-left: 100px;
 }
 
 .form {
-     background-color: rgba(128, 128, 128, 0.411);
-     position: relative;
-     z-index: 1;
-     max-width: 360px;
-     margin: 0 auto;
-     padding: 45px;
-     margin-top: 125px;
-     height: 350px;
-     justify-content: center;
+  background-color: rgba(128, 128, 128, 0.411);
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 45px;
+  margin-top: 125px;
+  height: 350px;
+  justify-content: center;
 }
 
 p {
-     font-weight: bold;
-     color: #ffff;
+  font-weight: bold;
+  color: #ffff;
 }
 
 a {
-     color: darkorange;
+  color: darkorange;
 }
 
 input {
-     font-family: "Roboto",sans-serif ;
-     outline: lemonchiffon;
-     width: 300px;
-     padding: 15px;
-     margin: 10px;
-     text-align: center;
-     border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  outline: lemonchiffon;
+  width: 300px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .form.register-form {
-     display:none;
+  display: none;
 }
 
 .message {
-     margin-left: 60px;
+  margin-left: 60px;
+}
+
+.error {
+  top: -410px;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  height: 40px;
+  color: white;
+  background: red;
+  font-size: 26px;
+  font-weight: 340;
+  transition: all ease 3s;
+  text-align: center;
+  padding-top: 15px;
+  opacity: 70%;
+  font-family: inherit;
+  visibility: hidden;
 }
